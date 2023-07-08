@@ -1,21 +1,30 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { CardProjectDetailsContainerStyles, TechStackContainerStyles, TitleProjectCardDetailStyle } from './CardProjectDetailsStyles'
 import Typewriter from '../Typewritter/Typewritter'
 import img1 from '../../../assets/imgProject1.png';
 import img2 from '../../../assets/imgProject2.png';
 import img3 from '../../../assets/imgProject3.png';
 import img4 from '../../../assets/imgProject4.png';
+import { GlobalContext } from '../../../Context/GlobalContext';
 
 
 const CardProjectDetails = () => {
-const lines =[
-  'NodeJS',
-  'ReactJS',
-  'MongoDB',
-  'Express',
-  'Styled-Components',
-  'Vercel'
-]
+  const { isOpenViewer, setIsOpenViewer, isScroll, setIsScroll } = useContext(GlobalContext);
+
+  const lines =[
+    'NodeJS',
+    'ReactJS',
+    'MongoDB',
+    'Express',
+    'Styled-Components',
+    'Vercel'
+  ]
+
+  const openImageViewer = () => {
+    window.scrollTo(0,0);
+    setIsOpenViewer(!isOpenViewer)
+    setIsScroll(!isScroll)
+  }
 
   return (
     <CardProjectDetailsContainerStyles>
@@ -45,10 +54,10 @@ const lines =[
       <span className='sectionTwoCardDetail'>
         <h2>Vista previa:</h2>
         <span className='containerImgProject'>
-          <img src={img1} alt="" />
-          <img src={img2} alt="" />
-          <img src={img3} alt="" />
-          <img src={img4} alt="" />
+          <img src={img1} alt="" onClick={openImageViewer}/>
+          <img src={img2} alt="" onClick={openImageViewer}/>
+          <img src={img3} alt="" onClick={openImageViewer}/>
+          <img src={img4} alt="" onClick={openImageViewer}/>
         </span>
       </span>
     </CardProjectDetailsContainerStyles>

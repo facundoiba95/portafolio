@@ -53,7 +53,7 @@ display:flex;
 
     p{
         width:100%;
-        max-width:500px;
+        max-width:600px;
         font-size:1.1rem;
         font-weight:600;
         color:#93999E;
@@ -64,7 +64,7 @@ display:flex;
         width:100%;
         display:flex;
         flex-direction:column;
-        gap:10px;
+        gap:30px;
 
 
         h2{
@@ -75,17 +75,42 @@ display:flex;
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:10px;
+        gap:80px;
         height:100%;
+       
+        
     img{
+        transition:all 0.2s ease-in-out;
         width:100%;
         max-width:500px;
+        border-left:3px solid #93999E;
+        border-right:3px solid #93999E;
+        padding:5px;
+        border-radius:20px;
     }
+
+    img:hover{
+        cursor:pointer;
+        filter: blur(2px);
+    }
+}
+
+@media (max-width: 1100px) {
+    .descriptionProject{
+    p{
+        max-width:450px;
+    }
+}
 }
 
 @media (max-width: 768px) {
     flex-direction:column;
 
+    .descriptionProject{
+    p{
+        max-width:600px;
+    }
+}
     .sectionTwoCardDetail{
         margin-top:25rem;
     }

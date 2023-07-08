@@ -12,7 +12,6 @@ justify-content:center;
 align-items:center;
 font-family:'Fira Code';
 gap:10px;
-cursor: pointer;
 
 h2{
     color:#2EDF37;
@@ -23,10 +22,11 @@ p{
     font-size:2.2rem;
     font-weight:300;
 }
-
+h2:hover{
+    cursor: pointer;
+}
 h2:active{
     opacity:0;
     visibility:hidden;
-    
 }
 `

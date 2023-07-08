@@ -1,13 +1,13 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { SectionProjectsHomeContainerStyles } from '../../components/organisms/SectionProjectsHome/SectionProjectsHomeStyles'
 import TitleSections from '../../components/atoms/TitleSections/TitleSections'
 
-const Projects = ({children}) => {
+const Projects =  ({children}) => {
   return (
-    <SectionProjectsHomeContainerStyles>
-      <TitleSections title={'Proyectos'}/>
-        {children}
-    </SectionProjectsHomeContainerStyles>
+      <SectionProjectsHomeContainerStyles>
+          <TitleSections title={'Proyectos'}/>
+          {children}
+       </SectionProjectsHomeContainerStyles>
     )
 }
 

@@ -1,5 +1,4 @@
 import { createGlobalStyle } from "styled-components";
-
 const GlobalStyles = createGlobalStyle`
 
 * {
@@ -13,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
  body{
     background-color: #14161a;
     color:white;
+    overflow:${props => props.isOpenViewer ? 'hidden' : 'visible'};
  }
 `
 export default GlobalStyles;
