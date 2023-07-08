@@ -3,6 +3,7 @@ import { SectionProjectDetailsContainerStyles } from './SectionProjectDetailsSty
 import CardProjectDetails from '../../molecules/CardProject/CardProjectDetails'
 import { TitleProjectCardDetailStyle } from '../../molecules/CardProject/CardProjectDetailsStyles'
 import Typewriter from '../../molecules/Typewritter/Typewritter'
+import OtherProjects from '../OtherProjects/OtherProjects'
 
 const SectionProjectDetails = () => {
 
@@ -20,9 +21,12 @@ const SectionProjectDetails = () => {
 
 
   return (
+    <>
     <SectionProjectDetailsContainerStyles>
         <CardProjectDetails/>
     </SectionProjectDetailsContainerStyles>
+    <OtherProjects/>
+    </>
     )
 }
 
