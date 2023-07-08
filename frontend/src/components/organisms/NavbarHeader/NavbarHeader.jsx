@@ -43,7 +43,6 @@ const NavbarHeader = () => {
         </NavbarHeaderListStyles>
     </NavbarHeaderContainerStyles>
   )
-
 }
 
 export default NavbarHeader
