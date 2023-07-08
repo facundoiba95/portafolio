@@ -2,17 +2,96 @@ import { styled } from "styled-components";
 
 export const CardProjectDetailsContainerStyles = styled.div`
 width:100%;
-height:600px;
-max-width:500px;
+height:auto;
 font-family:'Fira Code';
 font-weight:600;
+display:flex;
 
-@media (max-width: 580px) {
-    position:relative;
+
+.sectionOneCardDetail{
+    width:100%;
     display:flex;
     flex-direction:column;
-    gap:15px;
+    gap:20px;
 }
+
+.itemProject{
+    width:100%;
+    max-width:500px;
+    display:flex;
+    gap:20px;
+    align-items:center;
+
+    h3{
+        font-size:1.2rem;
+        padding-right:20px;
+        border-right: 4px solid white;
+        width:100%;
+        max-width:240px;
+    }
+    a{
+        color:#93999E;
+        font-size:1.1rem;
+        width:100%;
+        max-width:200px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding-left:5px;
+    }
+    a:hover{
+        color:yellow;
+    }
+
+}
+
+
+.descriptionProject{
+    display:flex;
+    flex-direction:column;
+    gap:3px;
+
+    p{
+        width:100%;
+        max-width:500px;
+        font-size:1.1rem;
+        font-weight:600;
+        color:#93999E;
+    }
+}
+
+.sectionTwoCardDetail{
+        width:100%;
+        display:flex;
+        flex-direction:column;
+        gap:10px;
+
+
+        h2{
+            width:200px;
+        }
+}
+.containerImgProject{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        gap:10px;
+        height:100%;
+    img{
+        width:100%;
+        max-width:500px;
+    }
+}
+
+@media (max-width: 768px) {
+    flex-direction:column;
+
+    .sectionTwoCardDetail{
+        margin-top:25rem;
+    }
+}
+
+
 `
 
 export const TitleProjectCardDetailStyle = styled.span`
@@ -23,14 +102,17 @@ gap:15px;
 height:40px;
 
 p{
-    font-size:1.2rem;
+    width:100%;
+    max-width:240px;
+    font-size:1.1rem;
     padding-right:20px;
     border-right: 4px solid white;
 }
 
-h2{
+h3{
     text-align:center;
     padding-left:10px;
+    color:#93999E;
 }
 
 @media (max-width: 580px) {

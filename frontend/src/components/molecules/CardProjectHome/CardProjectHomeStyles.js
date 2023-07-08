@@ -27,7 +27,6 @@ h2{
         opacity:1;
         visibility:visible;
     }
-
 }
 `
 
@@ -56,6 +55,14 @@ h2{
     visibility:hidden;
     opacity:0;
     transition:all 0.2s ease-in-out;
+}
+
+@media (max-width: 768px) {
+    h2:active{
+        color:yellow;
+        transition:all 0.1s ease-in-out;
+        transform:scale(2.2);
+    }
 }
 
 `

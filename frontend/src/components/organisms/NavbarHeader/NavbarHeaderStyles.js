@@ -29,12 +29,16 @@ align-items:center;
 @media (max-width: 768px) {
     transition:all 0.2s ease-in-out;
     flex-direction:column;
+    justify-content:flex-start;
+    align-items:flex-start;
     position:absolute;
+    padding-top:20px;
     top:100px;
     left:${props => props.isOpenMenu ? '0' : '-100%'};
     width:100%;
-    max-width:350px;
-    min-height:400px;
+    height:100vh;
+    background-color:#14161a;
+    gap:100px;
 }
 `
 
@@ -53,6 +57,27 @@ p:hover{
 }
 
 @media (max-width: 768px) {
-   display:none;
+    height:50px;
+    width:100%;
+    justify-content:flex-start;
+    padding-left:80px;
+
+    
+    p{  
+      color:#93999E;
+      font-size:1.4rem;
+      cursor: pointer;
+    }
+
+    p:hover{    
+      letter-spacing:0;
+      color:#93999E;
+    }
+    p:active{
+        color:yellow;
+        transition:all 0.1s ease-in-out;
+        transform:scale(2.2);
+    }
+
 }
 `
