@@ -9,7 +9,7 @@ border-left:15px solid white;
 padding-left:40px;
 margin-bottom:2rem;
 width:100%;
-max-width:280px;
+max-width:300px;
 
 @media (max-width: 400px) {
     font-size:2.8rem;

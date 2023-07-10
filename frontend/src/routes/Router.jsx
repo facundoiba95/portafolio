@@ -6,6 +6,10 @@ import NavbarHeader from "../components/organisms/NavbarHeader/NavbarHeader";
 import Projects from "../pages/Projects/Projects";
 import AllProjects from "../components/organisms/AllProjects/AllProjects";
 import SectionProjectDetails from "../components/organisms/SectionProjectDetails/SectionProjectDetails";
+import Footer from "../components/organisms/Footer/Footer";
+import Contact from "../pages/Contact/Contact";
+import Login from "../pages/Login/Login";
+import AdminView from "../pages/AdminView/AdminView";
 
 const Router = () => {
   return (
@@ -13,9 +17,13 @@ const Router = () => {
       <NavbarHeader/>
       <RoutesRouterDom>
         <Route path="/" element={<Home/>}/>
+        <Route path="/login" element={<Login/>}/>
+        <Route path="/contact" element={<Contact/>}/>
+        <Route path="/admin" element={<AdminView></AdminView>}/>
         <Route path="/projects/allProjects" element={<Projects><AllProjects/></Projects>}/>
         <Route path="/projects/:idProject" element={<Projects><SectionProjectDetails/></Projects>}/>
       </RoutesRouterDom>
+      <Footer/>
     </BrowserRouter>
   )
 }

@@ -37,7 +37,7 @@ const TypewriterLine = styled.p`
   line-height:18px;
   padding-right: ${props => (props.isLastLine ? '14px' : '10px')};
   border-right: ${props => (props.isLastLine ? '4px solid white' : 'none')};
-  animation: ${typingAnimation} 1s steps(30), ${blinkAnimation} 0.5s infinite step-end alternate;
+  animation: ${typingAnimation} 0.4s steps(30), ${blinkAnimation} 0.2s infinite step-end alternate;
   color: #2EDF37;
   
   @media (max-width: 768px) {
@@ -60,7 +60,7 @@ const Typewriter = ({ lines }) => {
       Array.from(text).forEach((char, charIndex) => {
         const charSpan = document.createElement('span');
         charSpan.textContent = char;
-        charSpan.style.animationDelay = `${index * 2}s, ${charIndex * 50}ms`;
+        // charSpan.style.animationDelay = `${index * 0}s, ${charIndex * 0}ms`;
         line.appendChild(charSpan);
       });
     });

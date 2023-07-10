@@ -91,7 +91,8 @@ display:flex;
 
     img:hover{
         cursor:pointer;
-        filter: blur(2px);
+        border-left:3px solid white;
+        border-right:3px solid white;
     }
 }
 

@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
  body{
     background-color: #14161a;
     color:white;
-    overflow:${props => props.isOpenViewer ? 'hidden' : 'visible'};
+    overflow:${props => props.isOpen ? 'hidden' : 'visible'};
  }
 `
 export default GlobalStyles;

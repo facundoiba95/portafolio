@@ -1,11 +1,12 @@
 import React from 'react'
 import { CardOtherProjectContainerStyles } from './CardOtherProjectsStyles'
 
-const CardOtherProjects = ({title}) => {
+const CardOtherProjects = ({title, handleFunction}) => {
+
   return (
-    <CardOtherProjectContainerStyles>
+    <CardOtherProjectContainerStyles onClick={(e) => handleFunction(e)}>
       <p>{`[`}</p>
-      <h2>{`"${title}"`}</h2>
+      <h2 onClick={(e) => handleFunction(e)}>{`"${title}"`}</h2>
       <p>{`]`}</p>
     </CardOtherProjectContainerStyles>
     )

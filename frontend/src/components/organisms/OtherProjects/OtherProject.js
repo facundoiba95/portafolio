@@ -10,7 +10,7 @@ justify-content:center;
 align-items:center;
 
 ::-webkit-scrollbar{
-    height:15px;
+    height:10px;
 }
 
 ::-webkit-scrollbar-track {
@@ -26,7 +26,7 @@ export const OtherProjectListStyles = styled.ul`
 width:100%;
 height:100%;
 display:flex;
-gap:10px;
+gap:20px;
 padding:10px;
 overflow-x:scroll;
 `

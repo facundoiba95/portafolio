@@ -3,6 +3,7 @@ import { NavbarHeaderContainerStyles, NavbarHeaderItemStyles, NavbarHeaderListSt
 import MenuHamburguer from '../../atoms/HamburguerMenu/MenuHamburguer'
 import { GlobalContext } from '../../../Context/GlobalContext'
 import { useNavigate } from 'react-router-dom'
+import Button from '../../atoms/Button/Button'
 
 const NavbarHeader = () => {
   const { isOpenMenu, setIsOpenMenu } = useContext(GlobalContext);
@@ -32,6 +33,12 @@ const NavbarHeader = () => {
     navigator('/contact')
   }
 
+  const goLogin = () => {
+    window.scrollTo(0,0);
+    setIsOpenMenu(!isOpenMenu)
+    navigator('/login')
+  }
+
   return (
     <NavbarHeaderContainerStyles>
       <MenuHamburguer/>
@@ -40,6 +47,9 @@ const NavbarHeader = () => {
             <NavbarHeaderItemStyles onClick={goProjects}><p>Proyectos</p></NavbarHeaderItemStyles>
             <NavbarHeaderItemStyles onClick={goAboutMe}><p>About Me</p></NavbarHeaderItemStyles>
             <NavbarHeaderItemStyles onClick={goContact}><p>Contacto</p></NavbarHeaderItemStyles>
+        </NavbarHeaderListStyles>
+        <NavbarHeaderListStyles>
+          <Button title={'Login'} handleFunction={goLogin}/>
         </NavbarHeaderListStyles>
     </NavbarHeaderContainerStyles>
   )
