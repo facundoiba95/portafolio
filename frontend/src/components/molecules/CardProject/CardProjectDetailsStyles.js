@@ -57,6 +57,7 @@ display:flex;
         font-size:1.1rem;
         font-weight:600;
         color:#93999E;
+        line-height:30px;
     }
 }
 
@@ -83,10 +84,12 @@ display:flex;
         transition:all 0.2s ease-in-out;
         width:100%;
         max-width:500px;
+        height:350px;
         border-left:3px solid #93999E;
         border-right:3px solid #93999E;
         padding:5px;
         border-radius:20px;
+        object-fit:contain;
     }
 
     img:hover{
@@ -138,8 +141,9 @@ p{
 h3{
     text-align:center;
     padding-left:10px;
-    color:#93999E;
+    color:#FC69FF;
 }
+
 
 @media (max-width: 580px) {
     

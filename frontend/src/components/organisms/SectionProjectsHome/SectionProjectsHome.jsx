@@ -3,9 +3,12 @@ import { SectionProjectsHomeContainerStyles, WrapperCardProjectsStyles } from '.
 import TitleSections from '../../atoms/TitleSections/TitleSections'
 import CardProjectHome from '../../molecules/CardProjectHome/CardProjectHome'
 import { useNavigate, useParams } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 const SectionProjectsHome = () => {
   const navigator = useNavigate();
+  const allProjects = useSelector( state => state.projectSlice.allProjects );
+
   const params = useParams();
 
   const goDetailsProject = (e) => {
@@ -15,15 +18,24 @@ const SectionProjectsHome = () => {
       navigator(`/projects/${params.idProject}`)
   }
 
+  const renderAllProjects = () => {
+    return allProjects.map( project => {
+      const { name, _id, techStack } = project;
+      return (
+        <CardProjectHome 
+        titleProject={name} 
+        _id={_id}
+        techStack={techStack}
+        handleFunction={(e) => goDetailsProject(e)}/>
+      )
+    } )
+  }
+
   return (
     <SectionProjectsHomeContainerStyles>
         <TitleSections title={'Proyectos'}/>
         <WrapperCardProjectsStyles>
-          <CardProjectHome titleProject={'Mau SportsTV'} handleFunction={(e) => goDetailsProject(e)}/>
-          <CardProjectHome titleProject={'Tricampeon'} handleFunction={(e) => goDetailsProject(e)}/>
-          <CardProjectHome titleProject={'Vestigio App'} handleFunction={(e) => goDetailsProject(e)}/>
-          <CardProjectHome titleProject={'TodoApp'} handleFunction={(e) => goDetailsProject(e)}/>
-          <CardProjectHome titleProject={'Landing page'} handleFunction={(e) => goDetailsProject(e)}/>
+          {renderAllProjects()}
         </WrapperCardProjectsStyles>
     </SectionProjectsHomeContainerStyles>
     )

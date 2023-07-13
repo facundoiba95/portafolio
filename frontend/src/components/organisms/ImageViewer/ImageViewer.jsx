@@ -5,7 +5,7 @@ import { AiFillCloseCircle } from 'react-icons/ai';
 import { GlobalContext } from '../../../Context/GlobalContext';
 
 const ImageViewer = () => {
-  const { isOpenViewer,setIsOpenViewer } = useContext(GlobalContext);
+  const { isOpenViewer,setIsOpenViewer, imageView } = useContext(GlobalContext);
 
   return (
     <ImageViewerContainerStyles isOpenViewer={isOpenViewer}>
@@ -13,7 +13,7 @@ const ImageViewer = () => {
           <AiFillCloseCircle className='iconClose'/>
           <h2>Cerrar ventana</h2>
         </span>
-        <ContentImageViewerStyles src={image}/>
+        <ContentImageViewerStyles src={imageView}/>
     </ImageViewerContainerStyles>
     )
 }

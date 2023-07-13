@@ -7,9 +7,11 @@ const GlobalContextProvider = ({children}) => {
     const [ isOpenMenu, setIsOpenMenu ] = useState(false); 
     const [ isScroll, setIsScroll ] = useState(false); 
     const [ isDark, setIsDark ] = useState(false);
+    const [ isOpenMenuAdmin, setIsOpenMenuAdmin ] = useState(false); 
     const [ isOpenModal, setIsOpenModal ] = useState(false); 
     const [ conditionModal, setConditionModal  ] = useState(false); 
-
+    const [ imageView, setImageView ] = useState('');
+    const [ isOpenSubmenu, setIsOpenSubmenu ] = useState(false);
   return (
     <GlobalContext.Provider value={{
         isOpenMenu, setIsOpenMenu,
@@ -17,7 +19,10 @@ const GlobalContextProvider = ({children}) => {
         isOpenViewer, setIsOpenViewer,
         isScroll, setIsScroll,
         isOpenModal, setIsOpenModal,
-        conditionModal, setConditionModal
+        conditionModal, setConditionModal,
+        isOpenMenuAdmin, setIsOpenMenuAdmin,
+        imageView, setImageView,
+        isOpenSubmenu, setIsOpenSubmenu
     }}>
         {children}
     </GlobalContext.Provider>

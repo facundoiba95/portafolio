@@ -27,7 +27,7 @@ width:100%;
 height:100%;
 display:flex;
 gap:20px;
-padding:10px;
+padding:10px 10px 20px 10px;
 overflow-x:scroll;
 `
 export const TitleOtherProjectsStyles = styled.p`

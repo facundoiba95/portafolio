@@ -1,24 +1,38 @@
 import React from 'react'
 import { CardProjectHomeContainerStyles, CardProjectHomeContentOneStyles } from './CardProjectHomeStyles'
-import { FaNodeJs, FaReact, FaHtml5, FaCss3 } from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiRedux, SiStyledcomponents } from 'react-icons/si';
-import { AiOutlineCloud } from 'react-icons/ai';
+import { FaNodeJs, FaReact, FaHtml5 } from 'react-icons/fa';
+import { SiExpress, SiRedux, SiMongodb, SiStyledcomponents } from 'react-icons/si';
 
+const CardProjectHome = ({
+      titleProject,
+      handleFunction,
+      _id,
+      techStack
+    }) => {
+        const iconsTechStack = {
+            'nodejs': <FaNodeJs style={{color:'yellowgreen'}}/> ,
+            'reactjs': <FaReact style={{color:'#3a86ff'}}/>,
+            'express': <SiExpress/>,
+            'redux': <SiRedux style={{color:'purple'}}/>,
+            'html': <FaHtml5 style={{color:'orange'}}/>,
+            'mongodb': <SiMongodb style={{color:'green'}}/>,
+            'styled-components': <SiStyledcomponents style={{color:'pink'}}/>
+        }
 
-const CardProjectHome = ({titleProject, handleFunction, _id}) => {
+        const renderIconsTechStack = () => {
+            return techStack.filter(tech => iconsTechStack[tech]).map(tech => {
+              return iconsTechStack[tech]
+            });
+          }
+        
   return (
     <CardProjectHomeContainerStyles onClick={(e) => handleFunction(e)} data-id={_id}>
         <CardProjectHomeContentOneStyles onClick={(e) => handleFunction(e)} data-id={_id}>
             <h2 onClick={(e) => handleFunction(e)} data-id={_id}>{titleProject}</h2>
             <span className='toolsContainer'>
-                <FaNodeJs style={{color:'yellowgreen'}}/>
-                <SiRedux style={{color:'purple'}}/>
-                <SiExpress/>
-                <SiStyledcomponents style={{color:'pink'}}/>
-                <SiMongodb style={{color:'green'}}/>
-                <FaReact style={{color:'#3a86ff'}}/>
-                <FaHtml5 style={{color:'orange'}}/>
-                <AiOutlineCloud style={{color:''}}/>
+                {
+                  renderIconsTechStack()
+                }
             </span>
         </CardProjectHomeContentOneStyles>
     </CardProjectHomeContainerStyles>

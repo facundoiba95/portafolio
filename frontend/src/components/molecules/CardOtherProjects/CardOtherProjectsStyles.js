@@ -2,8 +2,7 @@ import styled from "styled-components";
 
 export const CardOtherProjectContainerStyles = styled.li`
 width:100%;
-max-width:380px;
-min-width:320px;
+min-width:380px;
 height:250px;
 border:1px solid #80808080;
 display:flex;
@@ -16,6 +15,7 @@ gap:10px;
 h2{
     color:#2EDF37;
     transition: all 0.1s ease-in-out;
+    text-align:center;
 }
 
 p{

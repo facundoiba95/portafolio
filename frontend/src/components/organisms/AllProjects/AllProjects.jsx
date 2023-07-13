@@ -8,7 +8,7 @@ const AllProjects = () => {
     const dispatch = useDispatch();
     const navigator = useNavigate();
     const params = useParams();
-
+    const allProjects = useSelector( state => state.projectSlice.allProjects );
 
     const goDetailsProject = (e) => {
         const idProject = e.target.dataset.id;
@@ -16,21 +16,23 @@ const AllProjects = () => {
         navigator(`/projects/${params.idProject}`)
     }
 
-
-    // traer datos desde BDD
     const renderAllProjectsCards = () => {
-        return [].map(project => {
+        return allProjects.map(project => {
+            const { name, _id,techStack } = project;
             return (
-                <CardProjectHome titleProject={'Mausports'} handleFunction={(e) => goDetailsProject(e)}/>
+                <CardProjectHome
+                 titleProject={name} 
+                 techStack={techStack}
+                 handleFunction={(e) => goDetailsProject(e)}
+                 _id={_id}
+                 />
             )
         })
     }
 
-
   return (
     <WrapperCardProjectsStyles>
-        <CardProjectHome titleProject={'Mausports'} handleFunction={(e) => goDetailsProject(e)}/>
-        <CardProjectHome titleProject={'Tricampeon'} handleFunction={(e) => goDetailsProject(e)}/>
+        {renderAllProjectsCards()}
     </WrapperCardProjectsStyles>
     )
 }

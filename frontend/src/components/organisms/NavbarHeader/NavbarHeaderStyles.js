@@ -39,6 +39,10 @@ align-items:center;
     height:100vh;
     background-color:#14161a;
     gap:100px;
+    
+    .itemSubmenu{
+        display:none;
+    }
 }
 `
 
@@ -49,6 +53,8 @@ align-items:center;
 justify-content:center;
 cursor: pointer;
 font-weight:600;
+position:relative;
+height:100%;
 
 p:hover{
     transition:all 0.2s ease-in-out;
@@ -56,13 +62,57 @@ p:hover{
     color:yellow;
 }
 
+.submenu_container{
+    height:100%;
+    display:flex;
+    align-items:center;
+
+ul{
+width:300px;
+height:auto;
+background-color:#14161a;
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+position:absolute;
+left:50%;
+top:100px;
+transform: translate(-50%);
+font-size:1.2rem;
+opacity:0;
+visibility:hidden;
+transition:all 0.2s ease-in-out;
+border-radius:30px;
+border:2px solid #80808070;
+padding:10px;
+}
+
+li{
+width:100%;
+padding:20px 0px 20px 20px;
+
+h4:hover{
+    color:#2EDF37;
+}}
+}
+
+.submenu_container:hover .submenu{
+    opacity:1;
+    visibility:visible;
+}
+.submenu_container:hover p{
+    transition:all 0.2s ease-in-out;
+    letter-spacing:2px;
+    color:yellow;
+}
+
 @media (max-width: 768px) {
-    height:50px;
+    height:auto;
     width:100%;
     justify-content:flex-start;
     padding-left:80px;
 
-    
     p{  
       color:#93999E;
       font-size:1.4rem;
@@ -78,6 +128,71 @@ p:hover{
         transition:all 0.1s ease-in-out;
         transform:scale(2.2);
     }
-
 }
 `
+
+export const ListSubmenuNavbarMobileStyles = styled.span`
+width:100%;
+height:100%;
+display:none;
+transition:all 0.1s ease-in-out;
+
+@media (max-width: 768px) {
+    display:flex;
+    height:${props => props.isOpenSubmenu ? '15%' : '0'};
+    flex-direction:column;
+    padding-left:80px;
+
+
+    .iconClose,.iconOpen{
+      color:white;
+      font-weight:600;
+      font-size:1.5rem;
+      position:absolute;
+      left:140px;
+      transition:all 0.1s ease-in-out;
+    }
+    .iconClose{
+        opacity:${props => props.isOpenSubmenu ? '0' : '1'};
+        visibility: ${props => props.isOpenSubmenu ? 'hidden' : 'visible'};
+    }
+
+    .iconOpen{
+        color:yellow;
+        opacity:${props => props.isOpenSubmenu ? '1' : '0'};
+        visibility: ${props => props.isOpenSubmenu ? 'visible' : 'hidden'};
+    }
+
+    p{
+      color:#93999E;
+      font-size:1.4rem;
+      cursor: pointer;
+      font-weight:600;
+      display:flex;
+      position:relative;
+      align-items:center;
+    }
+
+    ul{
+        transition:all 0.2s ease-in-out;
+        display:flex;
+        height:${props => props.isOpenSubmenu ? 'auto' : '0'};
+        opacity:${props => props.isOpenSubmenu ? '1' : '0'};
+        visibility:${props => props.isOpenSubmenu ? 'visible' : 'hidden'};
+        flex-direction:column;
+        gap:20px;
+        padding:20px 0 10px 0px;
+    }
+}
+`
+
+export const ItemSubmenuNavbarMobileStyles = styled.li`
+width:100%;
+max-width:300px;
+padding-bottom:5px;
+height:100%;
+font-weight:600;
+font-size:1.2rem;
+cursor:pointer;
+`
+

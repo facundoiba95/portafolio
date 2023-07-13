@@ -10,6 +10,7 @@ import Footer from "../components/organisms/Footer/Footer";
 import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
 import AdminView from "../pages/AdminView/AdminView";
+import CardAddProject from "../components/molecules/CardAddProject/CardAddProject";
 
 const Router = () => {
   return (
@@ -19,6 +20,7 @@ const Router = () => {
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/admin/addProject" element={<AdminView><CardAddProject/></AdminView>}/>
         <Route path="/admin" element={<AdminView></AdminView>}/>
         <Route path="/projects/allProjects" element={<Projects><AllProjects/></Projects>}/>
         <Route path="/projects/:idProject" element={<Projects><SectionProjectDetails/></Projects>}/>

@@ -1,14 +1,26 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { NavbarAdminContainerStyles, NavbarAdminItemsStyles, NavbarAdminListStyles } from './NavbarAdminStyles'
+import { BiSolidChevronLeftCircle, BiSolidChevronRightCircle } from 'react-icons/bi';
+import { GlobalContext } from '../../../Context/GlobalContext';
+import { useNavigate } from 'react-router-dom';
 
 const NavbarAdmin = () => {
+    const { isOpenMenuAdmin, setIsOpenMenuAdmin } = useContext(GlobalContext);
+    const navigator = useNavigate();
+
+    const goAddProject = () => {
+        window.scrollTo(0,0);
+        setIsOpenMenuAdmin(!isOpenMenuAdmin);
+        navigator('/admin/addProject');
+    }
+
+
   return (
-    <NavbarAdminContainerStyles>
+    <NavbarAdminContainerStyles isOpenMenuAdmin={isOpenMenuAdmin}>
+        <BiSolidChevronRightCircle className='iconRight' onClick={() => setIsOpenMenuAdmin(false)}/>
+        <BiSolidChevronLeftCircle className='iconLeft' onClick={() => setIsOpenMenuAdmin(true)}/>
         <NavbarAdminListStyles>
-            <NavbarAdminItemsStyles>Este es el item numero 1</NavbarAdminItemsStyles>
-            <NavbarAdminItemsStyles>Este es el item numero 2</NavbarAdminItemsStyles>
-            <NavbarAdminItemsStyles>Item numero 3</NavbarAdminItemsStyles>
-            <NavbarAdminItemsStyles>Este es el otro item numero 4</NavbarAdminItemsStyles>
+            <NavbarAdminItemsStyles onClick={goAddProject}><p>Agregar proyecto</p></NavbarAdminItemsStyles>
         </NavbarAdminListStyles>
     </NavbarAdminContainerStyles>
     )
