@@ -4,7 +4,7 @@ import('./database.js')
 import ('./libs/initialSetup.js');
 config();
 
-const PUERTO = process.env.PORT || 3000;
+const PUERTO = process.env.PORT;
 
 app.listen(PUERTO, () => {
     console.log('Server listen to port: ', PUERTO);
