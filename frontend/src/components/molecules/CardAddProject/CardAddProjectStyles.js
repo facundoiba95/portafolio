@@ -27,6 +27,18 @@ gap:30px;
     gap:10px;
 }
 
+button {
+    width:150px;
+    height:40px;
+    border-radius:5px;
+    border:1px solid yellow;
+    background-color:transparent;
+    color:white;
+    font-weight:600;
+    margin:0 auto;
+    cursor: pointer;
+}
+
 @media (max-width: 580px) {
     .containerImages{
     img{

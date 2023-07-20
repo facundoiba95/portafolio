@@ -6,12 +6,14 @@ import SectionSkillsHome from '../../components/organisms/SectionSkillsHome/Sect
 import SectionCertifications from '../../components/organisms/SectionCertifications/SectionCertifications';
 import { useDispatch } from 'react-redux';
 import { getAllProjects } from '../../redux/features/projects/projectSlice';
+import { getAllCertificates } from '../../redux/features/certifications/certificationSlice';
 
 const Home = () => {
   const dispatch = useDispatch();
 
   useEffect( () => {
     dispatch(getAllProjects())
+    dispatch(getAllCertificates())
   }, [])
 
 

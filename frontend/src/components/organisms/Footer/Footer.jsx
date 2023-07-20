@@ -15,9 +15,9 @@ const Footer = () => {
             <h3>Desarrollador Web Frontend</h3>
             <p>Estudiante de Desarrollo Web Fullstack</p>
             <span className='iconsContainer'>
-                <BsInstagram className='icon'/>
-                <BsGithub className='icon'/>
-                <BsLinkedin className='icon'/>
+                <a href="https://www.instagram.com/facundoiba_/" target='_blank'><BsInstagram className='icon'/></a>
+                <a href="https://github.com/facundoiba95" target='_blank'><BsGithub className='icon'/></a>
+                <a href="https://www.linkedin.com/in/facundoiba/" target='_blank'><BsLinkedin className='icon'/></a>
             </span>
         </span>
         <span className='contactMe'>

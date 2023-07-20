@@ -11,6 +11,8 @@ import Contact from "../pages/Contact/Contact";
 import Login from "../pages/Login/Login";
 import AdminView from "../pages/AdminView/AdminView";
 import CardAddProject from "../components/molecules/CardAddProject/CardAddProject";
+import CardAddCertificate from "../components/molecules/CardAddCertificate/CardAddCertificate";
+import AboutMe from "../pages/AboutMe/AboutMe";
 
 const Router = () => {
   return (
@@ -19,8 +21,10 @@ const Router = () => {
       <RoutesRouterDom>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login/>}/>
+        <Route path='/aboutme' element={<AboutMe/>}/>
         <Route path="/contact" element={<Contact/>}/>
         <Route path="/admin/addProject" element={<AdminView><CardAddProject/></AdminView>}/>
+        <Route path="/admin/addCertificate" element={<AdminView><CardAddCertificate/></AdminView>}/>
         <Route path="/admin" element={<AdminView></AdminView>}/>
         <Route path="/projects/allProjects" element={<Projects><AllProjects/></Projects>}/>
         <Route path="/projects/:idProject" element={<Projects><SectionProjectDetails/></Projects>}/>

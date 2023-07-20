@@ -139,9 +139,10 @@ transition:all 0.1s ease-in-out;
 
 @media (max-width: 768px) {
     display:flex;
-    height:${props => props.isOpenSubmenu ? '15%' : '0'};
+    height:${props => props.isOpenSubmenu ? '30%' : '0'};
     flex-direction:column;
     padding-left:80px;
+    max-height:350px;
 
 
     .iconClose,.iconOpen{
@@ -152,6 +153,7 @@ transition:all 0.1s ease-in-out;
       left:140px;
       transition:all 0.1s ease-in-out;
     }
+
     .iconClose{
         opacity:${props => props.isOpenSubmenu ? '0' : '1'};
         visibility: ${props => props.isOpenSubmenu ? 'hidden' : 'visible'};
@@ -176,7 +178,7 @@ transition:all 0.1s ease-in-out;
     ul{
         transition:all 0.2s ease-in-out;
         display:flex;
-        height:${props => props.isOpenSubmenu ? 'auto' : '0'};
+        height:${props => props.isOpenSubmenu ? '100%' : '0'};
         opacity:${props => props.isOpenSubmenu ? '1' : '0'};
         visibility:${props => props.isOpenSubmenu ? 'visible' : 'hidden'};
         flex-direction:column;
