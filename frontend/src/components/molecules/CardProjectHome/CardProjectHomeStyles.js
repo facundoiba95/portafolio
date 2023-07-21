@@ -28,6 +28,7 @@ h2{
         visibility:visible;
     }
 }
+
 `
 
 export const CardProjectHomeContentOneStyles = styled.div`
@@ -63,7 +64,11 @@ h2{
         transition:all 0.1s ease-in-out;
         transform:scale(2.2);
     }
-}
 
+    .toolsContainer{
+        opacity:1;
+        visibility:visible;
+    }
+}
 `
 
