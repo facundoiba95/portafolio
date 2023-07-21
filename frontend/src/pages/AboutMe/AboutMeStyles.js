@@ -10,16 +10,20 @@ align-items:center;
 font-family:'Poppins';
 gap:20px;
 
-
+h2{
+    font-size:2.5rem;
+}
 
 p{
     color:#ffffff99;
     width:100%;
-    max-width:700px;
+    max-width:1000px;
     font-size:1.2rem;
     font-weight:600;
     letter-spacing:1px;
+    padding:10px;
 }
+
 strong{
     color:white;
 }
@@ -28,8 +32,12 @@ a{
     color:#808080;
 }
 
+small,h4{
+    font-size:1.2rem;
+    color:#fffff0;
+}
+
 @media (max-width: 580px) {
-    padding:10px;
     p{
         text-align:left;
     }

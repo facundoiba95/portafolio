@@ -1,10 +1,21 @@
 import React from 'react'
 import { FooterContainerStyles } from './FooterStyles'
 import imgProfileFooter from '../../../assets/facunew5.png';
-
+import { useNavigate } from 'react-router-dom';
 import { BsInstagram, BsGithub, BsLinkedin } from 'react-icons/bs';
 
 const Footer = () => {
+    const navigator = useNavigate();
+
+    const goContact = () => {
+        window.scrollTo(0,0);
+        navigator('/contact');
+    }
+
+    const goHowCreatePortafolio = () => {
+        window.scrollTo(0,0);
+        navigator('/howcreateportafolio');
+    }
   return (
     <FooterContainerStyles>
         <span className='imgContainer'>
@@ -21,7 +32,11 @@ const Footer = () => {
             </span>
         </span>
         <span className='contactMe'>
-            <p>Si quieres trabajar conmigo o contactarme por cualquier motivo, <a href="/contact">haz click aquí</a>!</p>
+            <small onClick={goHowCreatePortafolio}>Cómo se construyo este portafolio ?</small>
+            <span>
+              <p>Si quieres trabajar conmigo o contactarme por cualquier motivo:</p>
+              <b onClick={goContact}>haz click aquí</b>!
+            </span>
         </span>
     </FooterContainerStyles>
     )

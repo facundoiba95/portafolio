@@ -10,9 +10,16 @@ padding:20px;
 font-family:'Red Hat Display';
 font-size:1.4rem;
 gap:10px;
+
 a{
     color:yellow;
 }
+
+h4{
+    font-size:1.2rem;
+    color:yellow;
+}
+
 .imgContainer{
     img{
         width:190px;
@@ -40,10 +47,38 @@ a{
 }
 
 .contactMe {
-    p{
-      width:100%;
-      max-width:420px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+
+    small{
+        color:#fffff0;
+        font-size:1.3rem;
+        font-weight:600;
+        cursor: pointer;
     }
+
+    span{
+        display:flex;
+        width:100%;
+        max-width:420px;
+        gap:0;
+        align-items:flex-start;
+        flex-wrap:wrap;
+    }
+ 
+
+    b{
+        color:#fffff0;
+        cursor: pointer;
+    }
+    b:hover, small:hover{
+        color:yellow;
+    }
+
+
 }
 
 @media (max-width: 768px) {
@@ -56,6 +91,12 @@ a{
 
     .iconsContainer{
     justify-content:center;
+    }
+
+    .contactMe{
+      span{
+        justify-content:center;
+      }
     }
 }
 `

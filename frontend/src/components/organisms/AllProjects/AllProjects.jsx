@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import CardProjectHome from '../../molecules/CardProjectHome/CardProjectHome';
 import { WrapperCardProjectsStyles } from '../SectionProjectsHome/SectionProjectsHomeStyles';
 import { useNavigate, useParams } from 'react-router-dom';
+import { getAllProjects } from '../../../redux/features/projects/projectSlice';
 
 const AllProjects = () => {
     const dispatch = useDispatch();
     const navigator = useNavigate();
     const params = useParams();
     const allProjects = useSelector( state => state.projectSlice.allProjects );
+ 
+    useEffect(() => {
+       dispatch(getAllProjects())
+    }, [])
+
 
     const goDetailsProject = (e) => {
         const idProject = e.target.dataset.id;

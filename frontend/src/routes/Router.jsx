@@ -13,6 +13,7 @@ import AdminView from "../pages/AdminView/AdminView";
 import CardAddProject from "../components/molecules/CardAddProject/CardAddProject";
 import CardAddCertificate from "../components/molecules/CardAddCertificate/CardAddCertificate";
 import AboutMe from "../pages/AboutMe/AboutMe";
+import HowCreatePortafolio from "../pages/HowCreatePortafolio/HowCreatePortafolio";
 
 const Router = () => {
   return (
@@ -28,6 +29,7 @@ const Router = () => {
         <Route path="/admin" element={<AdminView></AdminView>}/>
         <Route path="/projects/allProjects" element={<Projects><AllProjects/></Projects>}/>
         <Route path="/projects/:idProject" element={<Projects><SectionProjectDetails/></Projects>}/>
+        <Route path="/howcreateportafolio" element={<HowCreatePortafolio/>}/>
       </RoutesRouterDom>
       <Footer/>
     </BrowserRouter>

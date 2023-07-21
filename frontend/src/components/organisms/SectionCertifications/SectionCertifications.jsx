@@ -23,7 +23,7 @@ const SectionCertifications = () => {
   }
   return (
     <SectionProjectsHomeContainerStyles>
-        <TitleSections title={'Certificaciones'}/>
+        <TitleSections title={'Certificaciónes'}/>
         <SectionCertificacionsContainerStyles>
           { renderCardCertificate() }
         </SectionCertificacionsContainerStyles>

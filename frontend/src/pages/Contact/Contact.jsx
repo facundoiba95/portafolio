@@ -1,22 +1,47 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ContactContainerStyles, FormContactContainerStyles } from './ContactStyles'
 import TitleSections from '../../components/atoms/TitleSections/TitleSections'
+import { useDispatch, useSelector } from 'react-redux';
+import { restartStatusMessage, sendMessage } from '../../redux/features/message/messageSlice';
+import Loader from '../../components/molecules/Loader/Loader';
+import CardEmailSentSuccesfully from '../../components/molecules/CardEmailSentSuccesfully/CardEmailSentSuccesfully';
+
 
 const Contact = () => {
   const [ inputName, setInputName ] = useState('');
   const [ inputNumber, setInputNumber ] = useState('');
   const [ inputEmail, setInputEmail ] = useState('');
   const [ inputContent, setInputContent ] = useState(''); 
+  const isLoading = useSelector( state => state.messageSlice.isLoading );
+  const status = useSelector( state => state.messageSlice.status );
+  const dispatch = useDispatch();
 
-  const handleSendMessage = (e) => {
-    e.preventDefault();
+  useEffect(() => {
+    dispatch(restartStatusMessage());
+  },[])
 
+  const handleSendMessage = () => {
+    const newMessage = {
+        name: inputName,
+        cellphone: inputNumber,
+        email: inputEmail,
+        content: inputContent
+    }
+
+    dispatch(sendMessage(newMessage));
   }
-
+   
   return (
-    <ContactContainerStyles>
+      <ContactContainerStyles>
         <TitleSections title={'Contacto'}/>
-        <FormContactContainerStyles onSubmit={handleSendMessage}>
+        {
+            isLoading
+            ? <Loader/>
+            : status == 200
+            ? <CardEmailSentSuccesfully conditionMessage={true}/>
+            : status == 500
+            ? <CardEmailSentSuccesfully conditionMessage={false}/>
+            :<FormContactContainerStyles>
             <span>
                 <label htmlFor="inputName">Nombre</label>
                 <input type="text" required name='name' id='inputName' value={inputName} placeholder='Nombre' onChange={(e) => setInputName(e.target.value)}/>
@@ -33,9 +58,11 @@ const Contact = () => {
                 <label htmlFor="inputContent">Mensaje</label>
                 <textarea name="content" required id="inputContent" cols="30" rows="10" placeholder='Escribe aqui tu mensaje, consulta o lo que quisieras saber sobre mi.' value={inputContent} onChange={(e) => setInputContent(e.target.value)}></textarea>
             </span>
-            <button>Enviar mensaje</button>
+            <button onClick={handleSendMessage}>Enviar mensaje</button>
         </FormContactContainerStyles>
-    </ContactContainerStyles>
+        }
+        </ContactContainerStyles>
+    
     )
 }
 

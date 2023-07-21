@@ -1,27 +1,20 @@
 import React from 'react';
-import imagen from '../../assets/facunew5remove.png';
 import { AboutMeContainerStyles } from './AboutMeStyles';
-
 
 const AboutMe = () => {
   return (
     <AboutMeContainerStyles>
-        <h2>Sobre mi</h2>
-        <p>Hola! Soy <strong>Facundo Ibañez Gambarte</strong>, un apasionado desarrollador web Frontend y estudiante de desarrollo web Fullstack de Córdoba, Argentina.</p>
-
-        <p>Con conocimientos sólidos en el diseño y la interfaz del Frontend, así como en el manejo del servidor Backend y bases de datos no relacionales como MongoDB, he trabajado en diversos proyectos personales y académicos para mejorar constantemente mis habilidades.</p>
-
-        <p>Dedicado a mi formación profesional, siempre busco aprender y crecer tanto de forma autodidacta como a través de clases virtuales en NUCBA.</p>
-
-        <p>Fuera del ámbito de la programación, formo parte de una banda musical y disfruto de hobbies como tocar el piano, jugar al fútbol y cocinar.</p>
-
-        <p>Valoro el trabajo en equipo y la colaboración, y me encantaría formar parte de un equipo excepcional para contribuir al logro de metas e ideas.</p>
-
-        <p>¡Agradezco que visites mi portafolio! Si tienes alguna pregunta o comentario sobre mi trabajo, estoy disponible para responderlo. Solo dirígete hacia la sección <a href="/contact">contacto</a>.</p>
-
-        <p>Espero tener la oportunidad de conectarnos y compartir mi pasión por la tecnología y el desarrollo.</p>
-
-        <p>¡Saludos! Facundo</p>
+        <h2>Sobre mí</h2>
+        <p>Mi nombre es <strong>Facundo Ibañez Gambarte</strong>, soy desarrollador web y estudiante de desarrollo web Fullstack. Actualmente, vivo en Córdoba, Argentina.</p>
+        <p>A través de mi dedicación y pasión por la programación y el desarrollo, he adquirido conocimientos comprobables para abarcar tanto el diseño y la interfaz del <small>Frontend</small>, como el manejo, configuración, programación y funcionalidad del servidor <small>Backend</small>. También cuento con experiencia en el manejo de <small>bases de datos</small> no relacionales, en especial MongoDB, realizando operaciones como crear, borrar, modificar y leer datos.</p>
+        <p>Durante mi trayectoria, he trabajado en diversos proyectos personales y académicos, en los cuales siempre busco añadir algo nuevo aprendido, planteándome retos personales que me permitan crecer constantemente.</p>
+        <p>En la búsqueda constante por mejorar mis habilidades y conocimientos, me dedico por completo a mi formación profesional, tanto de forma autodidacta como asistiendo a clases virtuales en NUCBA.</p>
+        <p>Como persona, me considero responsable, comprometido, solidario y apasionado. Tengo una profunda admiración hacia Lionel Messi, formo parte de una banda musical y disfruto de hobbies como tocar el piano, jugar al fútbol y cocinar.</p>
+        <p>Valoro el <small>trabajo en equipo</small>, la <small>colaboración</small>, la <small>voluntad</small> y el <small>esfuerzo</small>, ya que considero que son los medios necesarios para lograr grandes objetivos. Es por esta razón que me encantaría formar parte de un equipo de trabajo excepcional y contribuir al <h4>logro de tus metas e ideas.</h4></p>
+        <p>Agradezco sinceramente que te hayas tomado el tiempo para visitar mi portafolio! Me encuentro a tu disposición para responder cualquier pregunta o comentario que puedas tener sobre mi trabajo.</p>
+        <p>Espero tener la oportunidad de conectarnos y compartir más sobre mi pasión por la tecnología y el desarrollo. Gracias nuevamente por considerar mi perfil.</p>
+        <p>Saludos!</p>
+        <p><small>Facundo.</small></p>
     </AboutMeContainerStyles>
   )
 }
