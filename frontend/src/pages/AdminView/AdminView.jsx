@@ -8,6 +8,7 @@ import { GlobalContext } from '../../Context/GlobalContext';
 import { useDispatch, useSelector } from 'react-redux';
 import ErrorCard from '../../components/molecules/ErrorCard/ErrorCard';
 import { validateToken } from '../../redux/features/users/usersSlice';
+import { restartStatusProject } from '../../redux/features/projects/projectSlice';
 
 const AdminView = ({children}) => {
    const { isOpenMenuAdmin } = useContext(GlobalContext);
@@ -31,7 +32,8 @@ const AdminView = ({children}) => {
    }
 
    useEffect(() => {
-      dispatch(validateToken())
+      dispatch(validateToken());
+      dispatch(restartStatusProject());
    }, [])
 
   return (

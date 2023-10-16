@@ -33,7 +33,7 @@ const NavbarHeader = () => {
           </h4>
         </li>
         )
-      })
+      }).reverse()
   }
 
   const renderItemsSubmenuMobil = () => {
@@ -42,7 +42,7 @@ const NavbarHeader = () => {
       return (
         <ItemSubmenuNavbarMobileStyles data-id={_id} onClick={(e) => goDetailProject(e)}>{name}</ItemSubmenuNavbarMobileStyles>
       )
-    })
+    }).reverse();
   }
 
   const goProjects = () => {

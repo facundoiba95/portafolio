@@ -30,7 +30,7 @@ const OtherProjects = () => {
                  handleFunction={(e) => goDetailProject(e)}
                  _id={_id}/>
             )
-        });
+        }).reverse();
     }
 
   return (

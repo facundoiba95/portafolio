@@ -80,7 +80,11 @@ export const getProject = createAsyncThunk(
 export const projectSlice = createSlice({
     name:'projectSlice',
     initialState,
-    reducers:{},
+    reducers:{
+        restartStatusProject: ( state, action ) => { 
+            state.status = null;
+        }
+    },
     extraReducers: ( builder ) => {
        getAllProjectsBuilders( builder, getAllProjects );
        getProjectBuilders( builder, getProject );
@@ -88,4 +92,5 @@ export const projectSlice = createSlice({
     }
 })
 
+export const { restartStatusProject } = projectSlice.actions;
 export default projectSlice.reducer;

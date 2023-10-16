@@ -25,6 +25,17 @@ const CardProjectDetails = ({
     setIsScroll(!isScroll)
   }
 
+  const renderDescription = () => {
+    const description = content;
+    const replacedDescription = description.split('\n').map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        <br />
+      </React.Fragment>
+    ));
+  
+    return <p>{replacedDescription}</p>;
+  };
   return (
     <CardProjectDetailsContainerStyles>
       <span className='sectionOneCardDetail'>
@@ -42,7 +53,7 @@ const CardProjectDetails = ({
       </span>
       <span className='descriptionProject'>
           <h3>Descripción del proyecto: </h3>
-          <p>{content}</p>
+          <div>{ renderDescription() }</div>
       </span>
       <TechStackContainerStyles>
         <p>{`techStack = [`}</p>

@@ -28,7 +28,7 @@ const SectionProjectsHome = () => {
         techStack={techStack}
         handleFunction={(e) => goDetailsProject(e)}/>
       )
-    } )
+    } ).reverse()
   }
 
   return (

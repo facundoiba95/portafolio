@@ -33,7 +33,7 @@ const AllProjects = () => {
                  _id={_id}
                  />
             )
-        })
+        }).reverse()
     }
 
   return (

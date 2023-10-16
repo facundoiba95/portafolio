@@ -7,6 +7,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 position:relative;
+
 @media (max-width: 768px) {
     margin-top:10rem;
     height:580px;
@@ -77,6 +78,7 @@ font-family:'Montserrat';
     .profession{
         top:21rem;
         left:30px;
+        max-width:350px;
     }
 }
 

@@ -100,7 +100,7 @@ const CardAddProject = () => {
             </span>
             <span>
                 <label htmlFor="inputContent">Descripción del proyecto:</label>
-                <textarea name="content" value={inputContent} placeholder='Descripción del proyecto' id="inputContent" cols="30" rows="10" onChange={(e) => setInputContent(e.target.value)}></textarea>
+                <textarea name="content" value={inputContent} placeholder='Descripción del proyecto' id="inputContent" cols="30" rows="10" mul onChange={(e) => setInputContent(e.target.value)}></textarea>
             </span>
             <span className='addTechContainer'>
                 <label htmlFor="inputTech">Tecnologías:</label>
