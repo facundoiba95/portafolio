@@ -23,8 +23,8 @@ const Footer = () => {
         </span>
         <span className='infoProfileContainer'>
             <h2>Facundo Ibañez Gambarte</h2>
-            <h3>Desarrollador Web Frontend</h3>
-            <p>Fullstack Dev Trainee.</p>
+            <h3>Fullstack Web Dev Trainee.</h3>
+            <p>Estudiante de Desarrollo de Software.</p>
             <span className='iconsContainer'>
                 <a href="https://www.instagram.com/facundoiba_/" target='_blank'><BsInstagram className='icon'/></a>
                 <a href="https://github.com/facundoiba95" target='_blank'><BsGithub className='icon'/></a>
