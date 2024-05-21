@@ -10,8 +10,8 @@ const SectionTop = () => {
               <h1> Mi nombre <br/>es <b>Facundo</b>.</h1>
             </span>
             <span className='profession'>
-                <h3>Desarrollador Web Frontend.</h3>
-                <h4>Estudiante de Desarrollo Web Fullstack.</h4>
+                <h3>Fullstack Web Dev Trainee.</h3>
+                <h4>Estudiante de Desarrollo de Software.</h4>
             </span>
         </SectionTopContentOneStyles>
         <SectionTopContentTwoStyles>
