@@ -21,11 +21,22 @@ h2{
     h2{
     transition:all 0.2s ease-in-out;
     color:white;
+    
     }
 
     .toolsContainer{
         opacity:1;
         visibility:visible;
+    }
+}
+
+@media (max-width: 768px) {
+    height: 250px;
+    border: none;
+    border-bottom: 1px solid #80808090;
+
+    &:nth-child(1) {
+        border-top: 1px solid #80808090;
     }
 }
 
@@ -41,7 +52,7 @@ justify-content:center;
 align-items:center;
 position:relative;
 
-h2{
+h2 {
     font-size:2.2rem;
     text-align:center;
     transition:all 0.2s ease-in-out;
@@ -59,12 +70,16 @@ h2{
 }
 
 @media (max-width: 768px) {
-    h2:active{
+    /* h2:active{
         color:yellow;
         transition:all 0.1s ease-in-out;
         transform:scale(2.2);
-    }
+    } */
 
+        h2 {
+            color: white;
+            font-size: 1.4rem;
+        }
     .toolsContainer{
         opacity:1;
         visibility:visible;

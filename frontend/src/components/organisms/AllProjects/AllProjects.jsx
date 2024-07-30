@@ -4,16 +4,18 @@ import CardProjectHome from '../../molecules/CardProjectHome/CardProjectHome';
 import { WrapperCardProjectsStyles } from '../SectionProjectsHome/SectionProjectsHomeStyles';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getAllProjects } from '../../../redux/features/projects/projectSlice';
+import LoaderFullWidth from '../../molecules/LoaderFullWidth/LoaderFullWidth';
 
 const AllProjects = () => {
     const dispatch = useDispatch();
     const navigator = useNavigate();
     const params = useParams();
-    const allProjects = useSelector( state => state.projectSlice.allProjects );
+    const allProjects = useSelector( state => state.projectSlice.projects );
+    const { isLoading } = useSelector(state => state.projectSlice);
  
     useEffect(() => {
        dispatch(getAllProjects())
-    }, [])
+    }, [dispatch])
 
 
     const goDetailsProject = (e) => {
@@ -33,12 +35,12 @@ const AllProjects = () => {
                  _id={_id}
                  />
             )
-        }).reverse()
+        })
     }
 
   return (
     <WrapperCardProjectsStyles>
-        {renderAllProjectsCards()}
+       {renderAllProjectsCards()}
     </WrapperCardProjectsStyles>
     )
 }

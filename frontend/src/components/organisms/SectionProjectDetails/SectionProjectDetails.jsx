@@ -9,51 +9,52 @@ import { GlobalContext } from '../../../Context/GlobalContext'
 import { useDispatch, useSelector } from 'react-redux'
 import { getProject } from '../../../redux/features/projects/projectSlice'
 import { useParams } from 'react-router-dom'
+import TransitionContainer from '../../molecules/TransitionContainer/TransitionContainer'
 
 const SectionProjectDetails = () => {
     const dispatch = useDispatch();
     const params = useParams();
-    const projectSelected = useSelector( state => state.projectSlice.project );
+    const projectSelected = useSelector(state => state.projectSlice.project);
 
     useEffect(() => {
         dispatch(getProject(params.idProject))
-    }, [ params.idProject ])
+    }, [params.idProject])
 
     const renderProjectSelected = () => {
-        return projectSelected.map( project => {
+        return projectSelected.map(project => {
             const {
                 name,
                 linkproject,
                 linkwebsite,
                 techStack,
-                img1,img2,img3,img4,
+                img1, img2, img3, img4,
                 content,
                 _id
-             } = project;
+            } = project;
 
-             return (
+            return (
                 <CardProjectDetails
-                name={name}
-                linkproject={linkproject}
-                linkwebsite={linkwebsite}
-                content={content}
-                techStack={techStack}
-                img1={img1}
-                img2={img2}
-                img3={img3}
-                img4={img4}
-                _id={_id}
+                    name={name}
+                    linkproject={linkproject}
+                    linkwebsite={linkwebsite}
+                    content={content}
+                    techStack={techStack}
+                    img1={img1}
+                    img2={img2}
+                    img3={img3}
+                    img4={img4}
+                    _id={_id}
                 />
             )
-        } )
+        })
     }
     return (
-    <>
-    <SectionProjectDetailsContainerStyles>
-        {renderProjectSelected()}
-    </SectionProjectDetailsContainerStyles>
-    <OtherProjects/>
-    </>
+        <TransitionContainer>
+            <SectionProjectDetailsContainerStyles>
+                {renderProjectSelected()}
+            </SectionProjectDetailsContainerStyles>
+            <OtherProjects />
+        </TransitionContainer>
     )
 }
 

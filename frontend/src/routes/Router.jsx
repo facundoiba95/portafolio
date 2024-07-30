@@ -18,20 +18,20 @@ import HowCreatePortafolio from "../pages/HowCreatePortafolio/HowCreatePortafoli
 const Router = () => {
   return (
     <BrowserRouter>
-      <NavbarHeader/>
+      <NavbarHeader />
       <RoutesRouterDom>
-        <Route path="/" element={<Home/>}/>
-        <Route path="/login" element={<Login/>}/>
-        <Route path='/aboutme' element={<AboutMe/>}/>
-        <Route path="/contact" element={<Contact/>}/>
-        <Route path="/admin/addProject" element={<AdminView><CardAddProject/></AdminView>}/>
-        <Route path="/admin/addCertificate" element={<AdminView><CardAddCertificate/></AdminView>}/>
-        <Route path="/admin" element={<AdminView></AdminView>}/>
-        <Route path="/projects/allProjects" element={<Projects><AllProjects/></Projects>}/>
-        <Route path="/projects/:idProject" element={<Projects><SectionProjectDetails/></Projects>}/>
-        <Route path="/howcreateportafolio" element={<HowCreatePortafolio/>}/>
+        <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
+        <Route path='/aboutme' element={<AboutMe />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/admin/addProject" element={<AdminView><CardAddProject /></AdminView>} />
+        <Route path="/admin/addCertificate" element={<AdminView><CardAddCertificate /></AdminView>} />
+        <Route path="/admin" element={<AdminView></AdminView>} />
+        <Route path="/projects/allProjects" element={<Projects><AllProjects/></Projects>} />
+        <Route path="/projects/:idProject" element={<Projects><SectionProjectDetails /></Projects>} />
+        <Route path="/howcreateportafolio" element={<HowCreatePortafolio />} />
       </RoutesRouterDom>
-      <Footer/>
+      <Footer />
     </BrowserRouter>
   )
 }

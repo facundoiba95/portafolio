@@ -9,7 +9,7 @@ export default ( builder, getProject) => {
     })
     builder.addCase( getProject.fulfilled, ( state,action ) => {
         state.isLoading = false;
-        state.project = action.payload.foundProjectArray;
+        state.project = action.payload.project;
         state.status = action.payload.status;
 
         if(action.payload.status === 404){

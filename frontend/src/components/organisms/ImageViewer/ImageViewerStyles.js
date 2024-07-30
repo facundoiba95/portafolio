@@ -1,16 +1,15 @@
 import { styled } from "styled-components";
 
 export const ImageViewerContainerStyles = styled.div`
-width:100%;
-height:100%;
+width:100vw;
+height:100vh;
 max-height:800px;
 display:${props => props.isOpenViewer ? 'flex' : 'none'};
 backdrop-filter:blur(10px);
 position:absolute;
-top: 100px;
-left:50%;
-transform: translate(-50%);
-z-index: 1000;
+top: 0px;
+left: 0px;
+z-index: 2000;
 overflow:hidden;
 
 

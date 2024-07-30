@@ -7,14 +7,17 @@ import { useSelector } from 'react-redux'
 
 const SectionProjectsHome = () => {
   const navigator = useNavigate();
-  const allProjects = useSelector( state => state.projectSlice.allProjects );
+  const allProjects = useSelector( state => state.projectSlice.projects );
 
   const params = useParams();
 
   const goDetailsProject = (e) => {
       const idProject = e.target.dataset.id;
       params.idProject = idProject;
-      window.scrollTo(0,0)
+      window.scroll({
+        top: 0,
+        behavior: "smooth"
+      })
       navigator(`/projects/${params.idProject}`)
   }
 
@@ -28,7 +31,7 @@ const SectionProjectsHome = () => {
         techStack={techStack}
         handleFunction={(e) => goDetailsProject(e)}/>
       )
-    } ).reverse()
+    } )
   }
 
   return (

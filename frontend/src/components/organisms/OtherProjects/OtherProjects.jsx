@@ -3,21 +3,18 @@ import { OtherProjectListStyles, OtherProjectsContainerStyles, TitleOtherProject
 import CardOtherProjects from '../../molecules/CardOtherProjects/CardOtherProjects'
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getAllProjects } from '../../../redux/features/projects/projectSlice';
 
 const OtherProjects = () => {
     const params = useParams();
     const navigate = useNavigate();
-    const dispatch = useDispatch();
-    const allProjects = useSelector( state => state.projectSlice.allProjects );
+    const allProjects = useSelector( state => state.projectSlice.projects );
 
-    useEffect(() => {
-        dispatch(getAllProjects())
-    }, [])
-    
     const goDetailProject = (e) => {
         params.idProject = e.target.dataset.id;
-        window.scrollTo(0,0);
+        window.scroll({
+            top: 0,
+            behavior: "smooth"
+        });
         navigate(`/projects/${params.idProject}`);
     }
 
@@ -30,7 +27,7 @@ const OtherProjects = () => {
                  handleFunction={(e) => goDetailProject(e)}
                  _id={_id}/>
             )
-        }).reverse();
+        })
     }
 
   return (

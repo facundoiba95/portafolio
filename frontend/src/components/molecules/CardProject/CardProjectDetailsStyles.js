@@ -76,7 +76,7 @@ display:flex;
         display:flex;
         flex-direction:column;
         align-items:center;
-        gap:80px;
+        gap:20px;
         height:100%;
        
         
@@ -85,17 +85,9 @@ display:flex;
         width:100%;
         max-width:500px;
         height:350px;
-        border-left:3px solid #93999E;
-        border-right:3px solid #93999E;
-        padding:5px;
-        border-radius:20px;
-        object-fit:contain;
-    }
-
-    img:hover{
-        cursor:pointer;
-        border-left:3px solid white;
-        border-right:3px solid white;
+        border-radius: 10px;
+        object-fit: cover;
+        cursor: pointer;
     }
 }
 
@@ -110,13 +102,17 @@ display:flex;
 @media (max-width: 768px) {
     flex-direction:column;
 
+    .sectionOneCardDetail {
+        height: auto;
+    }
+
     .descriptionProject{
     p{
         max-width:600px;
     }
 }
     .sectionTwoCardDetail{
-        margin-top:25rem;
+        margin-top:33rem;
     }
 }
 
@@ -189,6 +185,7 @@ h2{
 }
 
 @media (max-width: 768px) {
+    height: auto;
     p{
         text-align:center;
         padding:0;

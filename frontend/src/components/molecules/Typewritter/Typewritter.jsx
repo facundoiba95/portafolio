@@ -18,12 +18,13 @@ const TypewriterContainer = styled.div`
   position: absolute;
   top: 45px;
   left: 60px;
-  width:auto;
+  width: auto;
   display:flex;
   flex-direction:column;
   gap:20px;
 
   @media (max-width: 768px) {
+    height: auto;
     align-items:flex-start;
   }
 `;
@@ -60,7 +61,6 @@ const Typewriter = ({ lines }) => {
       Array.from(text).forEach((char, charIndex) => {
         const charSpan = document.createElement('span');
         charSpan.textContent = char;
-        // charSpan.style.animationDelay = `${index * 0}s, ${charIndex * 0}ms`;
         line.appendChild(charSpan);
       });
     });

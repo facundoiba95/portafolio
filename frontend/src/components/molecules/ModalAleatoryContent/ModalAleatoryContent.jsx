@@ -10,7 +10,10 @@ const ModalAleatoryContent = ({
   const { isOpenModal, setIsOpenModal, setConditionModal, setIsScroll, isScroll } = useContext(GlobalContext);
 
   const settingConditionModal = ( condition ) => {
-    window.scrollTo(0,0);
+    window.scroll({
+      top: 0,
+      behavior: "smooth"
+    });
     setConditionModal(condition)
     setIsScroll(!isScroll);
     setIsOpenModal(!isOpenModal);

@@ -6,7 +6,7 @@ import createProjectBuilders from './projectBuilders/createProjectBuilders';
 const initialState = {
     error: null,
     isLoading: false,
-    allProjects: [],
+    projects: [],
     project: [],
     status: [],
     message: null

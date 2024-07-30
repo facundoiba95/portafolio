@@ -1,9 +1,11 @@
 import React from 'react';
 import { AboutMeContainerStyles } from './AboutMeStyles';
+import TransitionContainer from '../../components/molecules/TransitionContainer/TransitionContainer';
 
 const AboutMe = () => {
   return (
-    <AboutMeContainerStyles>
+    <TransitionContainer>
+      <AboutMeContainerStyles>
         <h2>Sobre mí</h2>
         <p>Mi nombre es <strong>Facundo Ibañez Gambarte</strong>, soy desarrollador web fullstack. Actualmente, vivo en Córdoba, Argentina.</p>
         <p>A través de mi dedicación y pasión por la programación y el desarrollo, he adquirido conocimientos comprobables para abarcar tanto el diseño y la interfaz del <small>Frontend</small>, como el manejo, configuración, programación y funcionalidad del servidor <small>Backend</small>. También cuento con experiencia en el manejo de <small>bases de datos</small> no relacionales, en especial MongoDB, realizando operaciones como crear, borrar, modificar y leer datos.</p>
@@ -15,7 +17,8 @@ const AboutMe = () => {
         <p>Espero tener la oportunidad de conectarnos y compartir más sobre mi pasión por la tecnología y el desarrollo. Gracias nuevamente por considerar mi perfil.</p>
         <p>Saludos!</p>
         <p><small>Facundo.</small></p>
-    </AboutMeContainerStyles>
+      </AboutMeContainerStyles>
+    </TransitionContainer>
   )
 }
 

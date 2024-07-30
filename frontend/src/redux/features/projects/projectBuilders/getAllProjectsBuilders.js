@@ -9,7 +9,7 @@ export default ( builder, getAllProjects) => {
     })
     builder.addCase( getAllProjects.fulfilled, ( state,action ) => {
         state.isLoading = false;
-        state.allProjects = action.payload.findAllProjects;
+        state.projects = action.payload.projects;
         state.status = action.payload.status;    
     })
 }
